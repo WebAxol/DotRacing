@@ -1,0 +1,54 @@
+@import ./import/_colors
+@import ./import/_fonts
+
+*
+    margin: 0
+    padding: 0
+
+nav
+    top: 0
+    position: sticky
+    background-color: rgba(0,0,0,0.2)
+    padding: 20px
+    ul
+        height: 100%
+        display: flex
+        justify-content: space-around
+        list-style-type: none
+        align-items: center
+        a
+            text-decoration: none
+            font-size: 1.2em
+            color: white
+            
+
+main, footer
+    border: solid 2px black
+    padding: 20px
+
+header 
+    .container
+        height: 100%
+
+    div
+        position: absolute
+        width:  100%
+
+.front-layer
+    background: rgba(127,0,45,0.2)
+    background: linear-gradient(180deg, rgba(127,0,45,0.5) 0%, rgba(0,0,0,0.2) 75%)
+    height: 100%
+
+    div
+        position: relative
+
+    
+    h1
+        color: white
+        font-size: 6em
+        font-family: Primary
+        text-shadow: 4px 4px 10px $colorC
+
+canvas
+    width: 100%
+
