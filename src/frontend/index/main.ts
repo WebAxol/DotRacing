@@ -78,10 +78,6 @@ spotLight.castShadow = true;
 
 scene.add(spotLight);
 
-//const help = new SpotLightHelper(spotLight);
-
-//scene.add(help)
-
 const ambientLight = new THREE.AmbientLight(0xFFFFFF);
 
 scene.add(ambientLight);
