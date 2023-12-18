@@ -8,7 +8,7 @@ const PORT = 5200;
 const app = new express();
 
 app.use(express.static(join(__dirname,'public')));
-app.use(express.static(join(__dirname,'lib/frontend')));
+app.use(express.static(join(__dirname,'dist')));
 app.use('/three/',   express.static(join(__dirname,'node_modules/three')));
 //app.use('/examples/',express.static(join(__dirname,'node_modules/three/examples')));
 

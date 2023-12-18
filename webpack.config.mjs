@@ -10,20 +10,25 @@ export default {
     },
 
     output : {
-        filename : "[name].bundle.js",
+        filename : "[name].min.js",
         path : path.resolve(__dirname,"dist")
     },
 
-    resolve : {
-        alias : {
-            "/three/examples/jsm/controls/OrbitControls.js" : path.resolve(__dirname, "node_modules/three/examples/jsm/controls/OrbitControls.js"),
-            "/three/build/three.module.js" : path.resolve(__dirname, "node_modules/three/build/three.module.js")
-        }
+    module: {
+        rules: [{
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env'],
+                },
+            },
+        }],
     },
 
     optimization: {
         minimize : true,
         minimizer : [ new TerserPlugin() ]
-    }
-
+    },
 }
