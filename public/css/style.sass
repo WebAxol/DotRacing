@@ -51,7 +51,16 @@ header
         font-size: 7em
         font-family: Primary
         text-shadow: 10px 4px 10px $colorC
+        animation: flash
+        animation-duration: 1s
 
 canvas
     width: 100%
 
+@keyframes flash 
+    0%
+        opacity: 0
+        transform: translateX(500px)
+    100%
+        opacity: 1
+        transform: translateX(0)

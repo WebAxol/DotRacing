@@ -5,6 +5,7 @@ import { Renderer, Scene, Camera } from '../utils/threeComponents.js';
 
 //scene.add(gridHelper);
 Renderer.setSize(window.innerWidth - 15, window.innerHeight);
+Renderer.setClearColor(new THREE.Color(0x28F3E3));
 
 Camera.position.set(-1,1,5);
 //Camera.rotation.y = Math.PI / 2;
@@ -16,10 +17,23 @@ const planeMaterial = new THREE.MeshPhongMaterial({ color : 0xffffff });
 const plane = new THREE.Mesh(planeGeometry,planeMaterial);
 
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load('./assets/textures/mosaic.png');
+var texture = textureLoader.load('./assets/textures/mosaic.png');
 
 planeMaterial.map = texture;
 plane.receiveShadow = true;
+
+// Background
+
+var texture = textureLoader.load('./assets/textures/bg2.png');
+const bgMaterial = new THREE.MeshBasicMaterial({
+    map: texture,
+    side: THREE.BackSide, // Show the texture on the inside of the sphere
+});
+
+const bgGeometry = new THREE.SphereGeometry(500, 60, 40); // Adjust the radius and segments as needed
+const backgroundSphere = new THREE.Mesh(bgGeometry, bgMaterial);
+
+Scene.add(backgroundSphere);
 
 Scene.add(plane);
 
@@ -28,7 +42,7 @@ Scene.add(plane);
 const spotLight = new THREE.SpotLight(0xFFFFFF);
 
 spotLight.position.y = 5;
-spotLight.position.x = 0;
+spotLight.position.z = 5;
 spotLight.angle = 0.7;
 spotLight.intensity = 100;
 spotLight.penumbra = 1;
@@ -64,6 +78,7 @@ ModelLoader.load(
 
         setInterval(() => {
 
+            backgroundSphere.rotation.y += 0.005;
             car.rotation.y   += 0.005;
             plane.rotation.z += 0.005;
             car.scale.set(1.5,1.5,1.5);

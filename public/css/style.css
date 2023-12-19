@@ -15,12 +15,12 @@
 }
 
 .text-color-E {
-  color: #3e3e3e;
+  color: #01101A;
 }
 
 @font-face {
   font-family: Primary;
-  src: url(../../assets/fonts/ShareTechMono-Regular.ttf);
+  src: url(../../assets/fonts/Cinzel-VariableFont_wght.ttf);
 }
 * {
   margin: 0;
@@ -52,7 +52,7 @@ nav ul a {
 
 main, footer {
   padding: 20px;
-  background-color: #3e3e3e;
+  background-color: #01101A;
 }
 
 header .container {
@@ -76,10 +76,23 @@ header div {
   font-size: 7em;
   font-family: Primary;
   text-shadow: 10px 4px 10px #7f002d;
+  animation: flash;
+  animation-duration: 1s;
 }
 
 canvas {
   width: 100%;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
