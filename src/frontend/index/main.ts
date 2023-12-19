@@ -3,12 +3,10 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader }    from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Renderer, Scene, Camera } from '../utils/threeComponents.js';
 
-//scene.add(gridHelper);
 Renderer.setSize(window.innerWidth - 15, window.innerHeight);
 Renderer.setClearColor(new THREE.Color(0x28F3E3));
 
 Camera.position.set(-1,1,5);
-//Camera.rotation.y = Math.PI / 2;
 
 // Geometry
 
@@ -95,7 +93,6 @@ ModelLoader.load(
         console.error(err);
     }
 );
-
 
 // ANIMATE
 

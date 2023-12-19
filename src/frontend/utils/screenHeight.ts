@@ -16,7 +16,7 @@ const setAsScreenHeight = () => {
         let elementTopMargin    = parseFloat(elementStyle.marginTop.split(/px/)[0]);
         let elementBottomMargin = parseFloat(elementStyle.marginBottom.split(/px/)[0]);
 
-        el.style.height = `${screenHeight - (elementTopMargin + elementBottomMargin) }px`;
+        el.style.minHeight = `${screenHeight - (elementTopMargin + elementBottomMargin) }px`;
     
     }
 };
