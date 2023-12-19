@@ -1,4 +1,6 @@
+<h1>DOT Racing</h1>
 
+This is a website I made for a customer working at team in Formula 1 for schools; it is built using threeJS. Welcome to DOT-Racing!
 
 Have a look at the website at the capture below:
 
